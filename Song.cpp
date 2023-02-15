@@ -11,6 +11,22 @@ Song::Song ( float length, const std::string &genre, const std::string &artist, 
    length ), _genre ( genre ), _artist ( artist ), _title ( title )
 { }
 
+Song::Song ( const Song &orig ): _length (orig._length)
+                              , _artist ( orig._artist )
+                              , _genre ( orig._genre )
+                              , _title ( orig._title )
+                              , _nComments ( orig._nComments )
+{
+   if ( _nComments > 0 )
+   {
+      _comments = new std::string[_nComments];
+      for ( int i = 0 ; i < _nComments ; i++ )
+      {
+         _comments[i] = orig._comments[i];
+      }
+   }
+}
+
 
 float Song::getLength () const
 {

@@ -14,9 +14,12 @@ class Song
       std::string _genre = "";
       std::string _artist = "";
       std::string _title = "";
+      std::string *_comments = nullptr;
+      int _nComments = 0;
    public:
       Song ( float l = 1, std::string t = "" );
       Song ( float length, const std::string &genre, const std::string &artist, const std::string &title );
+      Song ( const Song& orig );
       float getLength () const;
       void setLength ( float length );
       const std::string &getGenre () const

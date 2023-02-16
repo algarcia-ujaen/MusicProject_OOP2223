@@ -1,0 +1,33 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+'removes the circle with a "C"
+hide circle
+'changes the symbols leading the attributes and methods
+skinparam ClassAttributeIconSize 0
+
+class Song{
+   - length: int = 0
+   - genre: string = ""
+   - artist: string = ""
+   - title: string = ""
+   - comments: *string = null
+   - nComments: int = 0
+   + Song ( l: float = 1, t: string = "" )
+   + Song ( length: float, genre: string
+          , artist: string, title: string )
+   + Song ( orig: Song )
+   + ~Song ()
+   + getLength (): float
+   + setLength ( length: float )
+   + getGenre (): string
+   + setGenre ( genre: string )
+   + getArtist (): string
+   + setArtist ( artist: string )
+   + getTitle (): string
+   + setTitle ( title: string )
+   + getNComments (): int
+   + addComment ( comment: string )
+}
+
+@enduml

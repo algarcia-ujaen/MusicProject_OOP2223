@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.0.0">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>550</x>
+      <y>260</y>
+      <w>270</w>
+      <h>390</h>
+    </coordinates>
+    <panel_attributes>style=autoresize
+Song
+--
+- length: int = 0
+- genre: string = ""
+- artist: string = ""
+- title: string = ""
+- comments: *string = null
+- nComments: int = 0
+--
++ Song ( l: float = 1, t: string = "" )
++ Song ( length: float, genre: string
+       , artist: string, title: string )
++ Song ( orig: Song )
++ ~Song ()
++ getLength (): float
++ setLength ( length: float )
++ getGenre (): string
++ setGenre ( genre: string )
++ getArtist (): string
++ setArtist ( artist: string )
++ getTitle (): string
++ setTitle ( title: string )
++ getNComments (): int
++ addComment ( comment: string )</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>

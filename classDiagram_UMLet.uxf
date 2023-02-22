@@ -7,7 +7,7 @@
       <x>550</x>
       <y>260</y>
       <w>270</w>
-      <h>390</h>
+      <h>430</h>
     </coordinates>
     <panel_attributes>style=autoresize
 Song
@@ -33,7 +33,10 @@ Song
 + getTitle (): string
 + setTitle ( title: string )
 + getNComments (): int
-+ addComment ( comment: string )</panel_attributes>
++ addComment ( comment: string )
++ operator= ( other: Song ): Song
++ operator&gt; ( other: Song ): bool
++ operator+ ( other: Song ): Song</panel_attributes>
     <additional_attributes/>
   </element>
 </diagram>

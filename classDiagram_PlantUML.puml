@@ -28,6 +28,9 @@ class Song{
    + setTitle ( title: string )
    + getNComments (): int
    + addComment ( comment: string )
+   + operator= ( other: Song ): Song
+   + operator> ( other: Song ): bool
+   + operator+ ( other: Song ): Song
 }
 
 @enduml

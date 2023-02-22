@@ -41,6 +41,9 @@ class Song
       void setTitle ( const std::string &title );
       const int getNComments ();
       void addComment ( const std::string &comment );
+      Song& operator= ( const Song &other );
+      bool operator> ( const Song &other );
+      Song operator+ ( const Song &other );
 };
 
 #endif //MYMUSICPROJECT_SONG_H

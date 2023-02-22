@@ -175,4 +175,81 @@ void Song::addComment ( const std::string &comment )
    biggerGlass = nullptr;
 }
 
+/**
+ * Assignment operator
+ * @param other Song whose values are copied in the current object
+ * @return The current object, so that chained assignments can be done
+ */
+Song& Song::operator= ( const Song &other )
+{  if ( this != &other ) // Make sure we are not trying to assign an object to itself
+   {  _length = other._length;   // Assign the attributes of simple types
+      _genre = other._genre;
+      _artist = other._artist;
+      _title = other._title;
 
+      // Delete old comments if necessary
+      if ( _nComments != other._nComments )
+      {  delete [] _comments;
+         _comments = new std::string[other._nComments];
+         _nComments = other._nComments;
+      }
+
+      // Copy comments of the original song
+      for ( int i = 0; i < _nComments; i++ )
+      {  _comments[i] = other._comments[i];
+      }
+   }
+   return *this;
+}
+
+/**
+ * Greater than operator.
+ *
+ * A song is greater than another one if its length or its title are greater
+ * @param other Song to compare with
+ * @retval true If the current song is greater than the other
+ * @retval false If the current song is not greater than the other
+ */
+bool Song::operator> ( const Song &other )
+{  bool toRet = true;   // True unless proved otherwise
+
+   if ( _length <= other._length )
+   {  toRet = false;
+   }
+
+   if ( _title <= other._title )
+   {  toRet = false;
+   }
+
+   return toRet;
+}
+
+/**
+ * Add operator
+ * @param other Song to be added
+ * @return A new song with combines the values of the two objects
+ */
+Song Song::operator+ ( const Song &other )
+{  Song aux;
+   aux._length = this->_length + other._length;
+   aux._genre = this->_genre + " & " + other._genre;
+   aux._artist = this->_artist + " & " + other._artist;
+   aux._title = this->_title + " & " + other._title;
+   aux._nComments = this->_nComments + other._nComments;
+
+   // Comments are combined in a new set
+   aux._comments = new std::string [aux._nComments];
+
+   int j = 0;
+   for ( int i = 0; i < this->_nComments; i++ )
+   {  aux._comments [j] = this->_comments[i];
+      j++;
+   }
+
+   for ( int i = 0; i < other._nComments; i++ )
+   {  aux._comments [j] = other._comments[i];
+      j++;
+   }
+
+   return aux;
+}

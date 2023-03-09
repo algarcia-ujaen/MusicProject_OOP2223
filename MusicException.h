@@ -16,6 +16,7 @@ class MusicException
    public:
       MusicException ( const std::string &className, const std::string &methodName
                      , const std::string &errorMsg );
+      ~MusicException() = default;
       const std::string &getErrorMsg () const;
       void setErrorMsg ( const std::string &errorMsg );
       const std::string &getClassName () const;

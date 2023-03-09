@@ -11,6 +11,9 @@ int main ()
  //  Song s4 (s2);
  //  Song songs [3];
    Song *pS = nullptr;
+   Artist a1;
+   a1.setName ( "Imagine Dragons" );
+   a1.setId ( 1 );
 
    try
    {
@@ -24,11 +27,17 @@ int main ()
    }
    s1.setLength (120);
    pS = new Song ( 60, "Demons" );
+   pS->setAuthor ( a1 );
+
+   std::cout << "The author of song "
+             << pS->getTitle() << " is "
+             << pS->getAuthor().getName() << std::endl;
+
 
 //   s1 = *pS;   // Same as s1.operator= (*pS);
 //   *pS = s1;   // Same as pS->operator= (s1);
                // Same as (*pS).operator= (s1);
-   if ( s1 > *pS )
+   if ( s1 > *pS )  // Same as s1.operator> (*pS)
    {  std::cout << "s1 is greater" << std::endl;
    }
    else

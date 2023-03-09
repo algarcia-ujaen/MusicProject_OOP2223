@@ -30,8 +30,8 @@ Song::Song ( float l, std::string t ): _length ( l ), _title ( t )
  * @param title Title of the song
  * @note No checks are done on the parameter validity
  */
-Song::Song ( float length, const std::string &genre, const std::string &artist, const std::string &title ) : _length (
-   length ), _genre ( genre ), _artist ( artist ), _title ( title )
+Song::Song ( float length, const std::string &genre, Artist &artist, const std::string &title ) : _length (
+   length ), _genre ( genre ), _author ( &artist ), _title ( title )
 { }
 
 /**
@@ -39,7 +39,7 @@ Song::Song ( float length, const std::string &genre, const std::string &artist, 
  * @param orig Song whose attributes are copied
  */
 Song::Song ( const Song &orig ): _length (orig._length)
-                              , _artist ( orig._artist )
+                              , _author ( orig._author )
                               , _genre ( orig._genre )
                               , _title ( orig._title )
                               , _nComments ( orig._nComments )
@@ -111,18 +111,18 @@ void Song::setGenre ( const std::string &genre )
  * Queries the song for its singer/player
  * @return The name of the singer/player of the song
  */
-const std::string &Song::getArtist () const
+const Artist &Song::getAuthor () const
 {
-   return _artist;
+   return *_author;
 }
 
 /**
  * Changes the singer/player of the song
  * @param artist New singer/player of the song
  */
-void Song::setArtist ( const std::string &artist )
+void Song::setAuthor ( Artist &artist )
 {
-   _artist = artist;
+   _author = &artist;
 }
 
 /**
@@ -192,7 +192,7 @@ Song& Song::operator= ( const Song &other )
 {  if ( this != &other ) // Make sure we are not trying to assign an object to itself
    {  _length = other._length;   // Assign the attributes of simple types
       _genre = other._genre;
-      _artist = other._artist;
+      _author = other._author;
       _title = other._title;
 
       // Delete old comments if necessary
@@ -241,7 +241,7 @@ Song Song::operator+ ( const Song &other )
 {  Song aux;
    aux._length = this->_length + other._length;
    aux._genre = this->_genre + " & " + other._genre;
-   aux._artist = this->_artist + " & " + other._artist;
+   //aux._author = this->_author + " & " + other._author;
    aux._title = this->_title + " & " + other._title;
    aux._nComments = this->_nComments + other._nComments;
 

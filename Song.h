@@ -8,6 +8,7 @@
 #define MYMUSICPROJECT_SONG_H
 
 #include <string>
+#include "Artist.h"
 
 /**
  * The objects of this class will represent songs
@@ -17,13 +18,13 @@ class Song
    private:
       float _length = 0;   ///< Length in seconds
       std::string _genre = "";   ///< Music genre
-      std::string _artist = "";   ///< Singer/player of the song
+      Artist* _author = nullptr;   ///< Singer/player of the song
       std::string _title = "";   ///< Title of the song
       std::string *_comments = nullptr;   ///< Comments about the song
       int _nComments = 0;   ///< Amount of comments about the song
    public:
       Song ( float l = 1, std::string t = "" );
-      Song ( float length, const std::string &genre, const std::string &artist, const std::string &title );
+      Song ( float length, const std::string &genre, Artist &artist, const std::string &title );
       Song ( const Song& orig );
       virtual ~Song ();
       float getLength () const;
@@ -35,8 +36,8 @@ class Song
       const std::string &getGenre () const    // Example of inline method
       {return _genre;}
       void setGenre ( const std::string &genre );
-      const std::string &getArtist () const;
-      void setArtist ( const std::string &artist );
+      const Artist &getAuthor () const;
+      void setAuthor ( Artist &artist );
       const std::string &getTitle () const;
       void setTitle ( const std::string &title );
       const int getNComments ();

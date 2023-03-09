@@ -1,8 +1,8 @@
 @startuml
 'https://plantuml.com/class-diagram
 
-'removes the circle with a "C"
-hide circle
+'forces to apply the UML style strictly
+skinparam style strictuml
 'changes the symbols leading the attributes and methods
 skinparam ClassAttributeIconSize 0
 
@@ -32,5 +32,49 @@ class Song{
    + operator> ( other: Song ): bool
    + operator+ ( other: Song ): Song
 }
+
+class Artist{
+   - name: string = ""
+   - id: int = 0
+   + Artist ()
+   + ~Artist ()
+   + getName (): string
+   + setName ( nN: string )
+   + getId (): int
+   + setId ( id: int )
+}
+
+class PlayList{
+   - name: string = ""
+   + getLength (): int
+   + PlayList ( name: string )
+   + ~PlayList ()
+   + getLength (): int
+   + addSong ( s: Song )
+   + getSong ( whichOne: int ): Song
+   + deleteSong ( whichOne: int )
+   + getNumberOfSongs (): int
+}
+
+class MusicException{
+   - errorMsg: string = ""
+   - className: string = ""
+   - methodName: string = ""
+   + MusicException ( cN: string, mN: string
+                    , eM: string )
+   + ~MusicException ()
+   + getErrorMsg (): string
+   + setErrorMsg ( eM: string )
+   + getClassName (): string
+   + setClassName ( cN: string )
+   + getMethodName (): string
+   + setMethodName ( mN: string )
+   + getFullMessage (): string
+}
+
+PlayList o-- "songs\n1..100" Song
+Song "*" ---> "author\n1" Artist: created by
+Song ..> MusicException
+PlayList ..> MusicException
 
 @enduml

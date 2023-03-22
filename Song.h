@@ -9,6 +9,8 @@
 
 #include <string>
 #include "Artist.h"
+#include "Melody.h"
+#include "Lyrics.h"
 
 /**
  * The objects of this class will represent songs
@@ -22,6 +24,17 @@ class Song
       std::string _title = "";   ///< Title of the song
       std::string *_comments = nullptr;   ///< Comments about the song
       int _nComments = 0;   ///< Amount of comments about the song
+
+      // These attributes implement the composition. Let us assume
+      // that every song has a melody (music), but not every song
+      // has lyrics
+      Lyrics* _songLyrics = nullptr;   ///< Lyrics of the song
+      // This would be also valid, as it also represents a composition
+      // (if the song is destroyed, the lyrics also disappear)
+      //      Lyrics _songLyrics;
+      //Melody* _songMusic = nullptr;
+      Melody _songMusic;   ///< Melody of the song
+
    public:
       Song ( float l = 1, std::string t = "" );
       Song ( float length, const std::string &genre, Artist &artist, const std::string &title );

@@ -2,6 +2,7 @@
 
 #include "Song.h"
 #include "MusicException.h"
+#include "Singer.h"
 
 int main ()
 {
@@ -60,5 +61,7 @@ int main ()
       delete pS;
       pS = nullptr;
    }
+
+   Singer mc ( 1, "Mariah Carey", "Soprano" );
    return 0;
 }

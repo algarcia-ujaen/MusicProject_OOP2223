@@ -28,8 +28,8 @@ fontfamily=Monospaced //possible: SansSerif,Serif,Monospaced
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>130</x>
-      <y>0</y>
+      <x>52</x>
+      <y>117</y>
       <w>455</w>
       <h>559</h>
     </coordinates>
@@ -66,8 +66,8 @@ Song
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>533</x>
-      <y>663</y>
+      <x>455</x>
+      <y>780</y>
       <w>468</w>
       <h>312</h>
     </coordinates>
@@ -92,8 +92,8 @@ MusicException
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>325</x>
-      <y>546</y>
+      <x>247</x>
+      <y>663</y>
       <w>312</w>
       <h>143</h>
     </coordinates>
@@ -103,8 +103,8 @@ MusicException
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>975</x>
-      <y>52</y>
+      <x>897</x>
+      <y>169</y>
       <w>286</w>
       <h>208</h>
     </coordinates>
@@ -124,8 +124,8 @@ Artist
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>572</x>
-      <y>52</y>
+      <x>494</x>
+      <y>169</y>
       <w>429</w>
       <h>65</h>
     </coordinates>
@@ -139,8 +139,8 @@ created by &gt;</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>936</x>
-      <y>273</y>
+      <x>858</x>
+      <y>390</y>
       <w>377</w>
       <h>234</h>
     </coordinates>
@@ -161,8 +161,8 @@ PlayList
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>572</x>
-      <y>273</y>
+      <x>494</x>
+      <y>390</y>
       <w>390</w>
       <h>65</h>
     </coordinates>
@@ -174,12 +174,110 @@ r2=songs</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>845</x>
-      <y>494</y>
+      <x>767</x>
+      <y>611</y>
       <w>208</w>
       <h>195</h>
     </coordinates>
     <panel_attributes>lt=&lt;.</panel_attributes>
     <additional_attributes>10.0;130.0;140.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>858</y>
+      <w>104</w>
+      <h>52</h>
+    </coordinates>
+    <panel_attributes>style=autoresize
+Melody</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>221</x>
+      <y>858</y>
+      <w>104</w>
+      <h>52</h>
+    </coordinates>
+    <panel_attributes>style=autoresize
+Lyrics</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>39</x>
+      <y>663</y>
+      <w>169</w>
+      <h>221</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+r2=music</panel_attributes>
+    <additional_attributes>110.0;10.0;10.0;150.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>195</x>
+      <y>663</y>
+      <w>208</w>
+      <h>221</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+r2=songLyrics</panel_attributes>
+    <additional_attributes>10.0;10.0;60.0;150.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1378</x>
+      <y>169</y>
+      <w>234</w>
+      <h>78</h>
+    </coordinates>
+    <panel_attributes>style=autoresize
+Singer
+--
+- voiceType: string</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1170</x>
+      <y>182</y>
+      <w>234</w>
+      <h>39</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>13.0;10.0;160.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1378</x>
+      <y>273</y>
+      <w>234</w>
+      <h>78</h>
+    </coordinates>
+    <panel_attributes>style=autoresize
+Player
+--
+- instrument: string</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1170</x>
+      <y>299</y>
+      <w>234</w>
+      <h>39</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>13.0;10.0;160.0;10.0</additional_attributes>
   </element>
 </diagram>

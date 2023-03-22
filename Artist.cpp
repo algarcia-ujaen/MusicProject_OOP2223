@@ -4,6 +4,11 @@
 
 #include "Artist.h"
 
+Artist::Artist ( const int id
+               , const std::string &name ): _id ( id )
+                                          ,_name ( name )
+{ }
+
 const std::string &Artist::getName () const
 {
    return _name;
@@ -23,3 +28,5 @@ void Artist::setId ( int id )
 {
    _id = id;
 }
+
+

@@ -8,12 +8,14 @@
 #include "MusicException.h"
 
 /**
- * Parameterized constructor that works as default also
+ * Parameterized constructor that works as default also.
+ * Creates a song without lyrics
  * @param l Length in seconds
  * @param t Title of the song
  * @note No checks are done on the parameter validity
  */
 Song::Song ( float l, std::string t ): _length ( l ), _title ( t )
+                                     , _songMusic ()
 {
    if ( _length < 0 )
    {
@@ -23,15 +25,17 @@ Song::Song ( float l, std::string t ): _length ( l ), _title ( t )
 }
 
 /**
- * Parameterized constructor
+ * Parameterized constructor. Creates a song without lyrics
  * @param length Length in seconds
  * @param genre Musical genre of the song
  * @param artist Name of the singer/player of the song
  * @param title Title of the song
  * @note No checks are done on the parameter validity
  */
-Song::Song ( float length, const std::string &genre, Artist &artist, const std::string &title ) : _length (
-   length ), _genre ( genre ), _author ( &artist ), _title ( title )
+Song::Song ( float length, const std::string &genre, Artist &artist
+           , const std::string &title ) : _length ( length ), _genre ( genre )
+           , _author ( &artist ), _title ( title ), _songMusic ()
+
 { }
 
 /**
@@ -43,6 +47,7 @@ Song::Song ( const Song &orig ): _length (orig._length)
                               , _genre ( orig._genre )
                               , _title ( orig._title )
                               , _nComments ( orig._nComments )
+                              , _songMusic ( orig._songMusic )
 {
    // The comments have to be duplicated, in order to avoid memory problems
    if ( _nComments > 0 )
@@ -52,6 +57,12 @@ Song::Song ( const Song &orig ): _length (orig._length)
       {
          _comments[i] = orig._comments[i];
       }
+   }
+
+   // If there are lyrics for the original song, copy them
+   if ( orig._songLyrics )
+   {
+      _songLyrics = new Lyrics ( *orig._songLyrics );
    }
 }
 
@@ -65,6 +76,14 @@ Song::~Song ()
       delete[] _comments;
       _comments = nullptr;
       _nComments = 0;
+   }
+
+   // Not every song has lyrics, but if it has them, we have
+   // to delete them
+   if ( _songLyrics )
+   {
+      delete _songLyrics;
+      _songLyrics = nullptr;
    }
 }
 
@@ -194,6 +213,19 @@ Song& Song::operator= ( const Song &other )
       _genre = other._genre;
       _author = other._author;
       _title = other._title;
+      _songMusic = other._songMusic;
+
+      if ( other._songLyrics )   // There are lyrics for the other
+      {
+         if ( _songLyrics )   // This song has lyrics; copy the other
+         {
+            *_songLyrics = *other._songLyrics;
+         }
+         else   // This song has no lyrics; create new lyrics
+         {
+            _songLyrics = new Lyrics ( *other._songLyrics );
+         }
+      }
 
       // Delete old comments if necessary
       if ( _nComments != other._nComments )

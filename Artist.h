@@ -14,6 +14,7 @@ class Artist
       int _id = 0;
    public:
       Artist() = default;
+      Artist ( const int id, const std::string &name );
       ~Artist() = default;
       const std::string &getName () const;
       void setName ( const std::string &name );

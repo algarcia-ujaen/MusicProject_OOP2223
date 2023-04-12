@@ -4,6 +4,8 @@
 
 #include "Artist.h"
 
+#include <sstream>
+
 Artist::Artist ( const int id
                , const std::string &name ): _id ( id )
                                           ,_name ( name )
@@ -27,6 +29,15 @@ int Artist::getId () const
 void Artist::setId ( int id )
 {
    _id = id;
+}
+
+std::string Artist::toCSV () const
+{
+   std::stringstream aux;
+
+   aux << _id << ";" << _name;
+
+   return aux.str();
 }
 
 

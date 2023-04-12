@@ -1,8 +1,19 @@
 #include <iostream>
+#include <fstream>
 
 #include "Song.h"
 #include "MusicException.h"
 #include "Singer.h"
+
+template<typename X>
+void saveToFile ( const X &data, const std::string &fileName )
+{
+   std::ofstream myFile;
+
+   myFile.open ( fileName );
+   myFile << data.toCSV () << std::endl;
+   myFile.close();
+}
 
 int main ()
 {
@@ -63,5 +74,8 @@ int main ()
    }
 
    Singer mc ( 1, "Mariah Carey", "Soprano" );
+
+   saveToFile ( mc, "kk.txt" );
+//   saveToFile ( s7, "kk2.txt" );
    return 0;
 }

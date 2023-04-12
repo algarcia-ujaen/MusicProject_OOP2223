@@ -4,6 +4,8 @@
 
 #include "Singer.h"
 
+#include <sstream>
+
 Singer::Singer (): Artist()
 { }
 
@@ -31,6 +33,15 @@ const std::string &Singer::getVoiceType () const
 void Singer::setVoiceType ( const std::string &voiceType )
 {
    _voiceType = voiceType;
+}
+
+std::string Singer::toCSV () const
+{
+   std::stringstream aux;
+
+   aux << Artist::toCSV () << ";" << _voiceType;
+
+   return aux.str();
 }
 
 

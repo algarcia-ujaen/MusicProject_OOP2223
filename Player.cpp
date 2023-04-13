@@ -7,6 +7,10 @@
 Player::Player (): Artist()
 { }
 
+Player::Player ( int i, std::string n, std::string ins ): Artist (i, n)
+                                                        , _instrument ( ins )
+{}
+
 Player::Player ( const std::string &instrument ): Artist()
                                                 , _instrument ( instrument )
 { }

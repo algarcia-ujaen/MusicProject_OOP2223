@@ -14,6 +14,7 @@ class Player: public Artist
 
    public:
       Player ();
+      Player ( int i, std::string n, std::string ins );
       Player ( const std::string &instrument );
       Player ( const Player& orig );
       virtual ~Player ();

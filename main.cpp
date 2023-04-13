@@ -4,14 +4,15 @@
 #include "Song.h"
 #include "MusicException.h"
 #include "Singer.h"
+#include "Player.h"
 
 template<typename X>
-void saveToFile ( const X &data, const std::string &fileName )
+void saveToFile ( const X *data, const std::string &fileName )
 {
    std::ofstream myFile;
 
-   myFile.open ( fileName );
-   myFile << data.toCSV () << std::endl;
+   myFile.open ( fileName, std::ios_base::app );
+   myFile << data->toCSV () << std::endl;
    myFile.close();
 }
 
@@ -75,7 +76,18 @@ int main ()
 
    Singer mc ( 1, "Mariah Carey", "Soprano" );
 
-   saveToFile ( mc, "kk.txt" );
+   saveToFile ( &mc, "kk.txt" );
 //   saveToFile ( s7, "kk2.txt" );
+
+   Artist* band[4];
+   band[0] = new Singer ( 2, "Pepe", "Barítono" );
+   band[1] = new Player ( 3, "Manuel", "Electric guitar" );
+   band[2] = new Player  ( 4, "Francisco", "Drums" );
+   band[3] = new Player ( 5, "Isa", "Bass" );
+
+   for ( int i = 0; i < 4; i++ )
+   {
+      saveToFile ( band[i], "band.csv" );
+   }
    return 0;
 }

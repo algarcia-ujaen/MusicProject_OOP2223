@@ -20,7 +20,7 @@ class Artist
       void setName ( const std::string &name );
       int getId () const;
       void setId ( int id );
-      std::string toCSV () const;
+      virtual std::string toCSV () const;
 };
 
 #endif //MYMUSICPROJECT_ARTIST_H

@@ -24,14 +24,14 @@ fontfamily=Monospaced //possible: SansSerif,Serif,Monospaced
 
 
 // This text will be stored with each diagram;  use it for notes.</help_text>
-  <zoom_level>13</zoom_level>
+  <zoom_level>10</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>52</x>
-      <y>117</y>
-      <w>455</w>
-      <h>559</h>
+      <x>140</x>
+      <y>190</y>
+      <w>350</w>
+      <h>430</h>
     </coordinates>
     <panel_attributes>style=autoresize
 Song
@@ -66,10 +66,10 @@ Song
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>455</x>
-      <y>780</y>
-      <w>468</w>
-      <h>312</h>
+      <x>450</x>
+      <y>700</y>
+      <w>360</w>
+      <h>240</h>
     </coordinates>
     <panel_attributes>style=autoresize
 MusicException
@@ -92,10 +92,10 @@ MusicException
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>247</x>
-      <y>663</y>
-      <w>312</w>
-      <h>143</h>
+      <x>290</x>
+      <y>610</y>
+      <w>240</w>
+      <h>110</h>
     </coordinates>
     <panel_attributes>lt=&lt;.</panel_attributes>
     <additional_attributes>220.0;90.0;10.0;10.0</additional_attributes>
@@ -103,10 +103,10 @@ MusicException
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>897</x>
-      <y>169</y>
-      <w>286</w>
-      <h>208</h>
+      <x>790</x>
+      <y>230</y>
+      <w>220</w>
+      <h>160</h>
     </coordinates>
     <panel_attributes>style=autoresize
 Artist
@@ -124,10 +124,10 @@ Artist
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>494</x>
-      <y>169</y>
-      <w>429</w>
-      <h>65</h>
+      <x>480</x>
+      <y>230</y>
+      <w>330</w>
+      <h>50</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 m1=1
@@ -139,10 +139,10 @@ created by &gt;</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>858</x>
-      <y>390</y>
-      <w>377</w>
-      <h>234</h>
+      <x>760</x>
+      <y>400</y>
+      <w>290</w>
+      <h>180</h>
     </coordinates>
     <panel_attributes>style=autoresize
 PlayList
@@ -161,10 +161,10 @@ PlayList
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>494</x>
-      <y>390</y>
-      <w>390</w>
-      <h>65</h>
+      <x>480</x>
+      <y>400</y>
+      <w>300</w>
+      <h>50</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 m2=1..100
@@ -174,10 +174,10 @@ r2=songs</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>767</x>
-      <y>611</y>
-      <w>208</w>
-      <h>195</h>
+      <x>690</x>
+      <y>570</y>
+      <w>160</w>
+      <h>150</h>
     </coordinates>
     <panel_attributes>lt=&lt;.</panel_attributes>
     <additional_attributes>10.0;130.0;140.0;10.0</additional_attributes>
@@ -185,10 +185,10 @@ r2=songs</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>0</x>
-      <y>858</y>
-      <w>104</w>
-      <h>52</h>
+      <x>100</x>
+      <y>760</y>
+      <w>80</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>style=autoresize
 Melody</panel_attributes>
@@ -197,10 +197,10 @@ Melody</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>221</x>
-      <y>858</y>
-      <w>104</w>
-      <h>52</h>
+      <x>270</x>
+      <y>760</y>
+      <w>80</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>style=autoresize
 Lyrics</panel_attributes>
@@ -209,10 +209,10 @@ Lyrics</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>39</x>
-      <y>663</y>
-      <w>169</w>
-      <h>221</h>
+      <x>130</x>
+      <y>610</y>
+      <w>130</w>
+      <h>170</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
 r2=music</panel_attributes>
@@ -221,10 +221,10 @@ r2=music</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>195</x>
-      <y>663</y>
-      <w>208</w>
-      <h>221</h>
+      <x>250</x>
+      <y>610</y>
+      <w>160</w>
+      <h>170</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
 r2=songLyrics</panel_attributes>
@@ -233,10 +233,10 @@ r2=songLyrics</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1378</x>
-      <y>169</y>
-      <w>234</w>
-      <h>78</h>
+      <x>1160</x>
+      <y>230</y>
+      <w>180</w>
+      <h>60</h>
     </coordinates>
     <panel_attributes>style=autoresize
 Singer
@@ -247,10 +247,10 @@ Singer
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1170</x>
-      <y>182</y>
-      <w>234</w>
-      <h>39</h>
+      <x>1000</x>
+      <y>240</y>
+      <w>180</w>
+      <h>30</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>13.0;10.0;160.0;10.0</additional_attributes>
@@ -258,10 +258,10 @@ Singer
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1378</x>
-      <y>273</y>
-      <w>234</w>
-      <h>78</h>
+      <x>1160</x>
+      <y>310</y>
+      <w>180</w>
+      <h>60</h>
     </coordinates>
     <panel_attributes>style=autoresize
 Player
@@ -272,12 +272,38 @@ Player
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1170</x>
-      <y>299</y>
-      <w>234</w>
-      <h>39</h>
+      <x>1000</x>
+      <y>330</y>
+      <w>180</w>
+      <h>30</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>13.0;10.0;160.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>910</x>
+      <y>90</y>
+      <w>170</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>style=autoresize
+&lt;&lt;Interface&gt;&gt;
+CanBeSaved
+--
+/+ toCSV (): string/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>960</x>
+      <y>150</y>
+      <w>30</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;80.0</additional_attributes>
   </element>
 </diagram>

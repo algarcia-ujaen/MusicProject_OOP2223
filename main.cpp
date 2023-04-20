@@ -6,8 +6,18 @@
 #include "Singer.h"
 #include "Player.h"
 
-template<typename X>
-void saveToFile ( const X *data, const std::string &fileName )
+//template<typename X>
+//void saveToFile ( const X *data, const std::string &fileName )
+//{
+//   std::ofstream myFile;
+//
+//   myFile.open ( fileName, std::ios_base::app );
+//   myFile << data->toCSV () << std::endl;
+//   myFile.close();
+//}
+
+// version 2 with interface
+void saveToFile ( CanBeSaved *data, const std::string &fileName )
 {
    std::ofstream myFile;
 
@@ -15,6 +25,7 @@ void saveToFile ( const X *data, const std::string &fileName )
    myFile << data->toCSV () << std::endl;
    myFile.close();
 }
+
 
 int main ()
 {
@@ -24,10 +35,14 @@ int main ()
  //  Song s4 (s2);
  //  Song songs [3];
    Song *pS = nullptr;
-   Artist a1;
-   a1.setName ( "Imagine Dragons" );
-   a1.setId ( 1 );
 
+   // Now we can not create Artist objects, as it has a pure
+   // virtual method
+//   Artist a1;
+//   a1.setName ( "Imagine Dragons" );
+//   a1.setId ( 1 );
+
+   Singer a1 ( 1, "adsf", "tenor" );
    try
    {
       pS = new Song ( -1, "Demons" );
@@ -88,6 +103,13 @@ int main ()
    for ( int i = 0; i < 4; i++ )
    {
       saveToFile ( band[i], "band.csv" );
+      band[i]->playMusic();
+   }
+
+   for ( int i = 0; i < 4; i++ )
+   {
+      delete band[i];
+      band [i] = nullptr;
    }
    return 0;
 }

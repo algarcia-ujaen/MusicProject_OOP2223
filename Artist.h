@@ -5,9 +5,10 @@
 #ifndef MYMUSICPROJECT_ARTIST_H
 #define MYMUSICPROJECT_ARTIST_H
 
+#include "CanBeSaved.h"
 #include <string>
 
-class Artist
+class Artist: public CanBeSaved
 {
    private:
       std::string _name = "";
@@ -21,6 +22,7 @@ class Artist
       int getId () const;
       void setId ( int id );
       virtual std::string toCSV () const;
+      virtual void playMusic () = 0;
 };
 
 #endif //MYMUSICPROJECT_ARTIST_H

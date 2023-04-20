@@ -20,6 +20,8 @@ class Player: public Artist
       virtual ~Player ();
       const std::string &getInstrument () const;
       void setInstrument ( const std::string &instrument );
+      virtual std::string toCSV () const override;
+      virtual void playMusic () override;
 };
 
 #endif //MYMUSICPROJECT_PLAYER_H

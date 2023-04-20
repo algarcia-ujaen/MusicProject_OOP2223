@@ -21,7 +21,8 @@ class Singer: public Artist
       virtual ~Singer ();
       const std::string &getVoiceType () const;
       void setVoiceType ( const std::string &voiceType );
-      std::string toCSV () const;
+      virtual std::string toCSV () const override;
+      virtual void playMusic () override;
 };
 
 #endif //MYMUSICPROJECT_SINGER_H

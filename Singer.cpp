@@ -5,6 +5,7 @@
 #include "Singer.h"
 
 #include <sstream>
+#include <iostream>
 
 Singer::Singer (): Artist()
 { }
@@ -39,9 +40,14 @@ std::string Singer::toCSV () const
 {
    std::stringstream aux;
 
-   aux << Artist::toCSV () << ";" << _voiceType;
+   aux << "Singer;" << Artist::toCSV () << ";" << _voiceType;
 
    return aux.str();
 }
 
+void Singer::playMusic ()
+{
+   std::cout << getName() << " started singing with their "
+             << _voiceType << " voice" << std::endl;
+}
 

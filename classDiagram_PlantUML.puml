@@ -42,6 +42,8 @@ class Artist{
    + setName ( nN: string )
    + getId (): int
    + setId ( id: int )
+   + toCSV (): string
+   {abstract}+ playMusic ()
 }
 
 class PlayList{
@@ -72,9 +74,50 @@ class MusicException{
    + getFullMessage (): string
 }
 
+class Melody {
+   - score: string = ""
+   + getScore (): string
+   + setScore ( s: string )
+}
+
+class Lyrics {
+   - contents: string
+   + getContent (): string
+   + setContent ( c: string )
+}
+
+class Singer extends Artist {
+   - voiceType: string
+   + Singer ( vType: string )
+   + Singer ( i: int, n: string, vT: string )
+   + Singer ( orig: Singer )
+   + getVoiceType (): string
+   + setVoiceType ( vType: string )
+   + toCSV (): string
+   + playMusic ()
+}
+
+class Musician extends Artist {
+   - instrument: string
+   + Musician ( i: int, n: string, ins: string )
+   + Musician ( instrument: string )
+   + Musician ( orig: Musician )
+   + getInstrument (): string
+   + setInstrument ( instrument: string )
+   + toCSV (): string
+   + playMusic ()
+}
+
+interface CanBeSaved <<Interface>> {
+   {abstract} + toCSV (): string
+}
+
 PlayList o-- "songs\n1..100" Song
-Song "*" ---> "author\n1" Artist: created by
+Song "*" -right-> "author\n1" Artist: created by
 Song ..> MusicException
 PlayList ..> MusicException
+Song *-- "music" Melody
+Song *-- "songLyrics" Lyrics
+CanBeSaved <|.. Artist
 
 @enduml

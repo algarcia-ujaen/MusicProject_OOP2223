@@ -13,6 +13,7 @@ class MusicException
       std::string _errorMsg = "";
       std::string _className = "";
       std::string _methodName = "";
+
    public:
       MusicException ( const std::string &className, const std::string &methodName
                      , const std::string &errorMsg );

@@ -4,7 +4,7 @@
 #include "Song.h"
 #include "MusicException.h"
 #include "Singer.h"
-#include "Player.h"
+#include "Musician.h"
 
 //template<typename X>
 //void saveToFile ( const X *data, const std::string &fileName )
@@ -96,9 +96,9 @@ int main ()
 
    Artist* band[4];
    band[0] = new Singer ( 2, "Pepe", "Barítono" );
-   band[1] = new Player ( 3, "Manuel", "Electric guitar" );
-   band[2] = new Player  ( 4, "Francisco", "Drums" );
-   band[3] = new Player ( 5, "Isa", "Bass" );
+   band[1] = new Musician ( 3, "Manuel", "Electric guitar" );
+   band[2] = new Musician  ( 4, "Francisco", "Drums" );
+   band[3] = new Musician ( 5, "Isa", "Bass" );
 
    for ( int i = 0; i < 4; i++ )
    {

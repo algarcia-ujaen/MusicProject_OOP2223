@@ -6,6 +6,7 @@
 
 #include "Song.h"
 #include "MusicException.h"
+#include "NewMusicException.h"
 
 /**
  * Parameterized constructor that works as default also.
@@ -19,8 +20,9 @@ Song::Song ( float l, std::string t ): _length ( l ), _title ( t )
 {
    if ( _length < 0 )
    {
-      throw MusicException ( "Song", "Song"
-                           , "Negative length!!!" );
+//      throw MusicException ( "Song", "Song"
+//                           , "Negative length!!!" );
+      throw NewMusicException ( "[Song::Song]: Negative length!");
    }
 }
 

@@ -333,4 +333,50 @@ CanBeSaved
     <panel_attributes>lt=&lt;&lt;.</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;80.0</additional_attributes>
   </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>950</x>
+      <y>680</y>
+      <w>120</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>style=autoresize
+std::logic_error</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>920</x>
+      <y>760</y>
+      <w>160</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>style=autoresize
+NewMusicException</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>980</x>
+      <y>710</y>
+      <w>30</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;50.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>290</x>
+      <y>580</y>
+      <w>700</w>
+      <h>360</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>680.0;220.0;680.0;340.0;120.0;340.0;120.0;170.0;60.0;120.0;10.0;10.0</additional_attributes>
+  </element>
 </diagram>

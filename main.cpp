@@ -3,6 +3,7 @@
 
 #include "Song.h"
 #include "MusicException.h"
+#include "NewMusicException.h"
 #include "Singer.h"
 #include "Musician.h"
 
@@ -49,9 +50,13 @@ int main ()
       pS->addComment ( "Great!" );
       (*pS).addComment ( "Wonderful!" );
    }
-   catch ( MusicException& e )
+//   catch ( MusicException& e )
+//   {
+//      std::cerr << e.getFullMessage() << std::endl;
+//   }
+   catch ( NewMusicException& e )
    {
-      std::cerr << e.getFullMessage() << std::endl;
+      std::cerr << e.what () << std::endl;
    }
    s1.setLength (120);
    pS = new Song ( 60, "Demons" );

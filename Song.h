@@ -49,7 +49,8 @@ class Song
       const std::string &getGenre () const    // Example of inline method
       {return _genre;}
       void setGenre ( const std::string &genre );
-      const Artist &getAuthor () const;
+      Artist &getAuthor () const;
+      Artist* getAuthorPtr () const;
       void setAuthor ( Artist &artist );
       const std::string &getTitle () const;
       void setTitle ( const std::string &title );

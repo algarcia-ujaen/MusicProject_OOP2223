@@ -65,8 +65,31 @@ int main ()
    std::cout << "The author of song "
              << pS->getTitle() << " is "
              << pS->getAuthor().getName() << std::endl;
+   // Application of RTTI with references
+   std::cout << "And he/she is a ";
+   try
+   {  Singer& aux = dynamic_cast<Singer&> ( pS->getAuthor() );
+      std::cout << "singer";
+      // I could have used here aux as Singer if needed
+   }
+   catch ( std::bad_cast& e )
+   {  std::cout << "musician";
+   }
 
+   std::cout << std::endl;
 
+   // Application of RTTI with pointers
+   std::cout << "Just to confirm, he/she is a ";
+   Singer* ptrSaux = dynamic_cast<Singer*> ( pS->getAuthorPtr() );
+   if  ( ptrSaux != nullptr )
+   {  std::cout << "singer";
+      // I could have used here ptrSaux as Singer* if needed
+   }
+   else
+   {  std::cout << "musician";
+   }
+
+   std::cout << std::endl;
 //   s1 = *pS;   // Same as s1.operator= (*pS);
 //   *pS = s1;   // Same as pS->operator= (s1);
                // Same as (*pS).operator= (s1);

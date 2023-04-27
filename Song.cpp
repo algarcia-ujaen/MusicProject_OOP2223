@@ -130,11 +130,16 @@ void Song::setGenre ( const std::string &genre )
 
 /**
  * Queries the song for its singer/player
- * @return The name of the singer/player of the song
+ * @return The singer/player of the song
  */
-const Artist &Song::getAuthor () const
+Artist &Song::getAuthor () const
 {
    return *_author;
+}
+
+Artist* Song::getAuthorPtr () const
+{
+   return _author;
 }
 
 /**

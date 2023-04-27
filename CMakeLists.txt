@@ -21,4 +21,4 @@ add_executable(myMusicProject.exe
                Singer.h
                Musician.cpp
                Musician.h
-               CanBeSaved.h NewMusicException.cpp NewMusicException.h)
+               CanBeSaved.h NewMusicException.cpp NewMusicException.h MyAggregationVector.h)
